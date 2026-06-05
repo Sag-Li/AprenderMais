@@ -1,4 +1,9 @@
-package com.sagli.aprendermais.data
+package com.seunome.aprendermais.data
 
-class Course {
-}
+data class Course(
+    val id: Int,
+    val title: String,
+    val category: String,
+    val workload: String,
+    val description: String
+)
