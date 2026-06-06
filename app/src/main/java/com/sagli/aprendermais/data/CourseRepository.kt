@@ -1,104 +1,127 @@
-package com.seunome.aprendermais.data
+package com.sagli.aprendermais.data
 
 object CourseRepository {
 
     val courses = listOf(
 
         Course(
-            id = 1,
-            title = "Kotlin para Desenvolvimento Android",
-            category = "Programação",
-            workload = "20h",
-            description = "Aprenda os fundamentos da linguagem Kotlin, incluindo orientação a objetos, funções, coleções e boas práticas para o desenvolvimento de aplicativos Android modernos."
+            1,
+            "Kotlin Android",
+            "Programação",
+            "20h",
+            4.9,
+            "João Silva",
+            "Aprenda Kotlin para desenvolvimento Android moderno."
         ),
 
         Course(
-            id = 2,
-            title = "Jetpack Compose Essentials",
-            category = "Programação",
-            workload = "30h",
-            description = "Desenvolva interfaces declarativas utilizando Jetpack Compose, aplicando componentes Material Design 3, gerenciamento de estado e navegação entre telas."
+            2,
+            "Jetpack Compose",
+            "Programação",
+            "30h",
+            4.8,
+            "Maria Costa",
+            "Criação de interfaces modernas utilizando Jetpack Compose."
         ),
 
         Course(
-            id = 3,
-            title = "Git e GitHub para Equipes Ágeis",
-            category = "Ferramentas",
-            workload = "15h",
-            description = "Domine versionamento de código, fluxos de trabalho colaborativos, branches, pull requests e integração com repositórios remotos."
+            3,
+            "Git e GitHub",
+            "Ferramentas",
+            "15h",
+            4.7,
+            "Pedro Lima",
+            "Versionamento e colaboração em projetos de software."
         ),
 
         Course(
-            id = 4,
-            title = "Banco de Dados SQL",
-            category = "Dados",
-            workload = "25h",
-            description = "Aprenda modelagem relacional, consultas SQL, normalização de dados e operações de manipulação utilizadas em aplicações corporativas."
+            4,
+            "Banco de Dados SQL",
+            "Dados",
+            "25h",
+            4.6,
+            "Ana Souza",
+            "Fundamentos de modelagem e consultas SQL."
         ),
 
         Course(
-            id = 5,
-            title = "Arquitetura Android Moderna",
-            category = "Programação",
-            workload = "40h",
-            description = "Explore padrões arquiteturais como MVVM, gerenciamento de estado, injeção de dependência e organização escalável de projetos Android."
+            5,
+            "UX Design",
+            "Design",
+            "18h",
+            4.8,
+            "Lucas Alves",
+            "Princípios de experiência do usuário para aplicações."
         ),
 
         Course(
-            id = 6,
-            title = "UX Design e Experiência do Usuário",
-            category = "Design",
-            workload = "18h",
-            description = "Entenda os princípios de usabilidade, acessibilidade e pesquisa com usuários para criar produtos digitais mais eficientes."
+            6,
+            "Inteligência Artificial",
+            "IA",
+            "40h",
+            5.0,
+            "Carla Mendes",
+            "Introdução aos conceitos de IA e Machine Learning."
         ),
 
         Course(
-            id = 7,
-            title = "Prototipação com Figma",
-            category = "Design",
-            workload = "12h",
-            description = "Crie wireframes, protótipos interativos e sistemas de design utilizando uma das principais ferramentas do mercado."
+            7,
+            "Desenvolvimento Web",
+            "Programação",
+            "35h",
+            4.7,
+            "Fernanda Rocha",
+            "HTML, CSS e JavaScript para criação de sites modernos."
         ),
 
         Course(
-            id = 8,
-            title = "Python para Análise de Dados",
-            category = "Programação",
-            workload = "35h",
-            description = "Utilize Python para manipulação de dados, automação de tarefas e desenvolvimento de soluções voltadas à análise de informações."
+            8,
+            "Python para Dados",
+            "Dados",
+            "28h",
+            4.9,
+            "Ricardo Oliveira",
+            "Análise de dados e automação utilizando Python."
         ),
 
         Course(
-            id = 9,
-            title = "Machine Learning na Prática",
-            category = "Tecnologia",
-            workload = "45h",
-            description = "Implemente modelos preditivos utilizando algoritmos supervisionados e não supervisionados aplicados a cenários reais."
+            9,
+            "Figma para Designers",
+            "Design",
+            "16h",
+            4.8,
+            "Juliana Martins",
+            "Criação de protótipos e interfaces profissionais."
         ),
 
         Course(
-            id = 10,
-            title = "Fundamentos de Inteligência Artificial",
-            category = "Tecnologia",
-            workload = "50h",
-            description = "Conheça conceitos essenciais de IA, processamento de linguagem natural, visão computacional e aplicações modernas da tecnologia."
+            10,
+            "Cybersecurity Essentials",
+            "Segurança",
+            "22h",
+            4.7,
+            "Gustavo Pereira",
+            "Fundamentos de segurança digital e proteção de sistemas."
         ),
 
         Course(
-            id = 11,
-            title = "Power BI para Business Intelligence",
-            category = "Dados",
-            workload = "22h",
-            description = "Construa dashboards interativos, indicadores estratégicos e relatórios analíticos para tomada de decisão baseada em dados."
+            11,
+            "Cloud Computing",
+            "Infraestrutura",
+            "32h",
+            4.9,
+            "Bruno Santos",
+            "Conceitos de computação em nuvem e serviços modernos."
         ),
 
         Course(
-            id = 12,
-            title = "Scrum e Gestão Ágil de Projetos",
-            category = "Gestão",
-            workload = "10h",
-            description = "Aprenda os papéis, cerimônias e artefatos do Scrum para gerenciar projetos de forma iterativa e colaborativa."
+            12,
+            "Gestão de Projetos Ágeis",
+            "Gestão",
+            "24h",
+            4.8,
+            "Patrícia Gomes",
+            "Scrum, Kanban e metodologias ágeis aplicadas."
         )
-
     )
 }

@@ -5,16 +5,13 @@ plugins {
 
 android {
     namespace = "com.sagli.aprendermais"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.sagli.aprendermais"
         minSdk = 33
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -55,4 +52,14 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation("androidx.navigation:navigation-compose:2.9.0")
+    dependencies {
+
+        implementation(platform(libs.androidx.compose.bom))
+        implementation(libs.androidx.activity.compose)
+
+        implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+        implementation("androidx.compose.material:material-icons-extended")
+
+    }
 }
