@@ -12,19 +12,18 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
+
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+
 import androidx.lifecycle.viewmodel.compose.viewModel
+
 import com.sagli.aprendermais.data.Course
 import com.sagli.aprendermais.ui.components.CourseCard
 import com.sagli.aprendermais.viewmodel.CourseViewModel
-import androidx.compose.ui.text.style.TextAlign
+
 @Composable
 fun HomeScreen(
     onCourseClick: (Course) -> Unit,
@@ -44,42 +43,82 @@ fun HomeScreen(
         Text(
             text = "Aprender+",
             style = MaterialTheme.typography.headlineLarge,
+            textAlign = TextAlign.Center,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 24.dp),
+                .padding(top = 20.dp)
+        )
+
+        Text(
+            text = "Explore cursos técnicos e profissionalizantes.",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 12.dp),
             textAlign = TextAlign.Center
         )
 
         OutlinedTextField(
             value = searchText,
             onValueChange = {
+
                 searchText = it
                 viewModel.search(it)
+
             },
             label = {
                 Text("Buscar curso")
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp)
+                .padding(16.dp)
         )
 
-        LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
+        if (courses.isEmpty()) {
 
-            items(courses) { course ->
+            Column(
+                modifier = Modifier.padding(24.dp)
+            ) {
 
-                CourseCard(
-                    course = course,
-                    onClick = {
-                        onCourseClick(course)
-                    }
+                Text(
+                    "Nenhum curso encontrado"
                 )
+
+                Text(
+                    "Ajuste a busca."
+                )
+            }
+
+        } else {
+
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+
+                modifier = Modifier.fillMaxSize(),
+
+                contentPadding =
+                    PaddingValues(
+                        start = 16.dp,
+                        end = 16.dp,
+                        bottom = 100.dp
+                    ),
+
+                verticalArrangement =
+                    Arrangement.spacedBy(12.dp),
+
+                horizontalArrangement =
+                    Arrangement.spacedBy(12.dp)
+
+            ) {
+
+                items(courses) { course ->
+
+                    CourseCard(
+                        course = course,
+                        onClick = {
+                            onCourseClick(course)
+                        }
+                    )
+                }
             }
         }
     }

@@ -8,21 +8,29 @@ import kotlinx.coroutines.flow.StateFlow
 
 class CourseViewModel : ViewModel() {
 
+    private val allCourses = CourseRepository.courses
+
     private val _courses =
-        MutableStateFlow(CourseRepository.courses)
+        MutableStateFlow(allCourses)
 
     val courses: StateFlow<List<Course>> = _courses
+
+    private val _enrolledCourses =
+        MutableStateFlow<List<Course>>(emptyList())
+
+    val enrolledCourses: StateFlow<List<Course>> =
+        _enrolledCourses
 
     fun search(text: String) {
 
         if (text.isBlank()) {
 
-            _courses.value = CourseRepository.courses
+            _courses.value = allCourses
 
         } else {
 
             _courses.value =
-                CourseRepository.courses.filter {
+                allCourses.filter {
 
                     it.title.contains(
                         text,
@@ -34,6 +42,15 @@ class CourseViewModel : ViewModel() {
                                 ignoreCase = true
                             )
                 }
+        }
+    }
+
+    fun enroll(course: Course) {
+
+        if (!_enrolledCourses.value.contains(course)) {
+
+            _enrolledCourses.value =
+                _enrolledCourses.value + course
         }
     }
 }
